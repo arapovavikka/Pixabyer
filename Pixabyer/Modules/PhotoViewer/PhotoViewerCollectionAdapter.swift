@@ -7,7 +7,9 @@ import Foundation
 import UIKit
 
 final class PhotoViewerCollectionAdapter: BaseCollectionAdapter<PhotoViewModel> {
-	var changedIndexPosition: AnyPublisher<Int, Never> { changedIndexPositionPassthrough.eraseToAnyPublisher() }
+	var changedIndexPosition: AnyPublisher<Int, Never> {
+		changedIndexPositionPassthrough.eraseToAnyPublisher()
+	}
 
 	var zoomedImage: AnyPublisher<Bool, Never> {
 		zoomedImagePassthrough.eraseToAnyPublisher()
@@ -43,9 +45,9 @@ final class PhotoViewerCollectionAdapter: BaseCollectionAdapter<PhotoViewModel> 
 			}.store(in: cell)
 
 			cell.showBlockingError.receive(on: DispatchQueue.main)
-				.sink { error in
+				.sink { [weak collectionView] error in
 				self.viewModel[indexPath.row].error = error
-				collectionView.reloadItems(at: [indexPath])
+				collectionView?.reloadItems(at: [indexPath])
 			}.store(in: cell)
 
 			return cell
@@ -76,27 +78,5 @@ final class PhotoViewerCollectionAdapter: BaseCollectionAdapter<PhotoViewModel> 
 			collectionView.scrollToItem(at: visibleIndexPath, at: .centeredHorizontally, animated: true)
 			changedIndexPositionPassthrough.send(visibleIndexPath.row)
 		}
-	}
-}
-
-
-class UICombineButton: UIButton {
-	var touchUpInsidePublisher: AnyPublisher<Void, Never> {
-		touchUpInsidePassthrough.eraseToAnyPublisher()
-	}
-	
-	private let touchUpInsidePassthrough = PassthroughSubject<Void, Never>()
-	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		addTarget(self, action: #selector(touchUpInsidePressed), for: .touchUpInside)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-	@objc private func touchUpInsidePressed() {
-		touchUpInsidePassthrough.send()
 	}
 }
