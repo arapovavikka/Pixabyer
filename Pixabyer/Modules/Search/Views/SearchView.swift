@@ -24,7 +24,9 @@ fileprivate extension Appearance {
 
 final class SearchView: BaseView {
 	var searchPressed: AnyPublisher<String, Never> {
-		searchPressedPassthrough.eraseToAnyPublisher()
+		searchPressedPassthrough
+			.debounce(for: .milliseconds(500), scheduler: DispatchQueue.main)
+			.eraseToAnyPublisher()
 	}
 	
 	private let searchPressedPassthrough: PassthroughSubject<String, Never> = PassthroughSubject<String, Never>()
