@@ -10,8 +10,7 @@ import UIKit
 class SearchModuleRouter: Router {
 	func createModule() -> UIViewController {
 		let router = SearchRouter()
-		let viewModel = SearchViewModel()
-		viewModel.router = router
+		let viewModel = SearchViewModel(router: router)
 		let viewController = SearchViewController(viewModel: viewModel)
 		router.navigator = viewController
 		return viewController

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2BBCEB2AC0557F00CE17BD /* PhotoViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2BBCEA2AC0557F00CE17BD /* PhotoViewerViewModel.swift */; };
 		3C4D757C2AACA62000A7A064 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D757B2AACA62000A7A064 /* SearchViewController.swift */; };
 		3C4D757E2AACA63100A7A064 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D757D2AACA63100A7A064 /* SearchView.swift */; };
 		3C5874B12AB3022C00579CF7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C5874B02AB3022C00579CF7 /* Kingfisher */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C2BBCEA2AC0557F00CE17BD /* PhotoViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewModel.swift; sourceTree = "<group>"; };
 		3C4D757B2AACA62000A7A064 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3C4D757D2AACA63100A7A064 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3C5C75142AB354D1002861E4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				3CD342BF2AAA16C1000F0B3C /* Views */,
 				3C67982E2AAF2B6B00963B0E /* PhotoViewerModuleRouter.swift */,
 				3C6798312AAF34EC00963B0E /* PhotoViewerViewController.swift */,
+				3C2BBCEA2AC0557F00CE17BD /* PhotoViewerViewModel.swift */,
 			);
 			path = PhotoViewer;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				3CD342CA2AAA1F97000F0B3C /* UICollectionReusableView.swift in Sources */,
 				3CD342B92AAA14C9000F0B3C /* PhotoViewerView.swift in Sources */,
 				3C6798342AAF547A00963B0E /* DIContainer.swift in Sources */,
+				3C2BBCEB2AC0557F00CE17BD /* PhotoViewerViewModel.swift in Sources */,
 				3CD342D22AAC9E8A000F0B3C /* PhotoProvider.swift in Sources */,
 				3C9346DC2AACC5E900BCC0F1 /* Network.swift in Sources */,
 				3CD342C12AAA1727000F0B3C /* BaseCollectionViewCell.swift in Sources */,
