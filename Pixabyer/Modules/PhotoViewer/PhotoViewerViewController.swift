@@ -11,13 +11,13 @@ final class PhotoViewerViewController: UIViewController {
 	private let customView = PhotoViewerView()
 	private let baseAdapter = PhotoViewerCollectionAdapter()
 
-	private let viewModels: [PhotoViewModel]
+	private let viewModel: PhotoViewerViewModel
 	private var currentIndex: Int
 	
 	private var bag: Set<AnyCancellable> = []
 
-	init(viewModels: [PhotoViewModel], currentIndex: Int) {
-		self.viewModels = viewModels
+	init(viewModel: PhotoViewerViewModel, currentIndex: Int) {
+		self.viewModel = viewModel
 		self.currentIndex = currentIndex
 		super.init(nibName: nil, bundle: nil)
 	}
@@ -33,7 +33,7 @@ final class PhotoViewerViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		baseAdapter.update(viewModel: viewModels)
+		baseAdapter.update(viewModel: viewModel.photos)
 		bind()
 	}
 
@@ -45,9 +45,9 @@ final class PhotoViewerViewController: UIViewController {
 	private func bind() {
 		customView.verticalSwipe.sink { [weak self] _ in
 			guard let self = self else { return }
-			self.dismiss(animated: true)
+			self.viewModel.closeModule()
 		}.store(in: &bag)
-
+		
 		baseAdapter.changedIndexPosition.sink { [weak self] index in
 			guard let self = self else { return }
 			self.currentIndex = index
@@ -58,10 +58,6 @@ final class PhotoViewerViewController: UIViewController {
 			guard let self = self else { return }
 			self.customView.configureVerticalGestures(willDismissView: !isZoomed)
 		}.store(in: &bag)
-	}
-
-	@objc private func backButtonPressed() {
-		dismiss(animated: true)
 	}
 }
 

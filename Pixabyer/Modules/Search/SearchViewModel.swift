@@ -12,7 +12,7 @@ final class SearchViewModel {
 	var error: AnyPublisher<Error, Never> { errorPassthrough.eraseToAnyPublisher() }
 	var images: AnyPublisher<[PhotoViewModel], Never> { imagesPassthrough.eraseToAnyPublisher() }
 	
-	var router: SearchRouterProtocol?
+	private let router: SearchRouterProtocol?
 	
 	private var cancellable: Set<AnyCancellable> = []
 	private let provider: PhotoProviderProtocol
@@ -20,8 +20,12 @@ final class SearchViewModel {
 	private var errorPassthrough = PassthroughSubject<Error, Never>()
 	private var imagesPassthrough = PassthroughSubject<[PhotoViewModel], Never>()
 	
-	init(provider: PhotoProviderProtocol = DIContainer.shared.resolve(PhotoProviderProtocol.self)!) {
+	init(
+		provider: PhotoProviderProtocol = DIContainer.shared.resolve(PhotoProviderProtocol.self)!,
+		router: SearchRouterProtocol
+	) {
 		self.provider = provider
+		self.router = router
 	}
 	
 	func makeSearch(with text: String) {

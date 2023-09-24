@@ -16,6 +16,22 @@ class PhotoViewerModuleRouter: Router {
 	}
 	
 	func createModule() -> UIViewController {
-		return PhotoViewerViewController(viewModels: items, currentIndex: currentIndex)
+		let router = PhotoViewerRouter()
+		let viewModel = PhotoViewerViewModel(photos: items, router: router)
+		let viewController = PhotoViewerViewController(viewModel: viewModel, currentIndex: currentIndex)
+		router.navigator = viewController
+		return viewController
+	}
+}
+
+protocol PhotoViewerRouterProtocol {
+	func closeModule()
+}
+
+final class PhotoViewerRouter: PhotoViewerRouterProtocol {
+	weak var navigator: UIViewController?
+	
+	func closeModule() {
+		navigator?.navigationController?.popViewController(animated: true)
 	}
 }
