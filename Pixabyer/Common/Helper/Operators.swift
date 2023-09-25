@@ -2,8 +2,6 @@
 //  Operators.swift
 //  Pixabyer
 //
-//  Created by Vika on 07.09.2023.
-//
 
 import Foundation
 

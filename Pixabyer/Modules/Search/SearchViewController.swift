@@ -57,4 +57,9 @@ final class SearchViewController: BaseViewController {
 			self.customView.update(with: error)
 		}.store(in: &bag)
 	}
+	
+	override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+		guard motion == .motionShake else { return }
+		viewModel.routeToSettings()
+	}
 }

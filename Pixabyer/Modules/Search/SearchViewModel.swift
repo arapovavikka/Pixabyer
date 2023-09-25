@@ -54,4 +54,8 @@ final class SearchViewModel {
 		}
 		self.router?.routeToPhotoViewerScreen(for: images)
 	}
+	
+	func routeToSettings() {
+		router?.routeToSettingsScreen()
+	}
 }
