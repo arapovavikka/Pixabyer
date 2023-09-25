@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3C2BBCEB2AC0557F00CE17BD /* PhotoViewerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2BBCEA2AC0557F00CE17BD /* PhotoViewerViewModel.swift */; };
+		3C4ABC842AC16C7F00D8D5E4 /* SettingsModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC832AC16C7F00D8D5E4 /* SettingsModuleRouter.swift */; };
+		3C4ABC862AC16CB500D8D5E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC852AC16CB500D8D5E4 /* SettingsViewController.swift */; };
+		3C4ABC882AC16CC700D8D5E4 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC872AC16CC700D8D5E4 /* SettingsViewModel.swift */; };
+		3C4ABC8A2AC16CFF00D8D5E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC892AC16CFF00D8D5E4 /* SettingsView.swift */; };
+		3C4ABC8C2AC1743C00D8D5E4 /* SettingsTableAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC8B2AC1743C00D8D5E4 /* SettingsTableAdapter.swift */; };
+		3C4ABC8F2AC17C8D00D8D5E4 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC8E2AC17C8D00D8D5E4 /* UITableViewCell.swift */; };
+		3C4ABC922AC1971500D8D5E4 /* SettingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC912AC1971500D8D5E4 /* SettingItemModel.swift */; };
+		3C4ABC942AC1978900D8D5E4 /* SettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC932AC1978900D8D5E4 /* SettingsProvider.swift */; };
+		3C4ABC962AC19A4E00D8D5E4 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC952AC19A4E00D8D5E4 /* BaseTableViewCell.swift */; };
+		3C4ABC992AC19ACF00D8D5E4 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4ABC982AC19ACF00D8D5E4 /* SettingItemCell.swift */; };
 		3C4D757C2AACA62000A7A064 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D757B2AACA62000A7A064 /* SearchViewController.swift */; };
 		3C4D757E2AACA63100A7A064 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D757D2AACA63100A7A064 /* SearchView.swift */; };
 		3C5874B12AB3022C00579CF7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C5874B02AB3022C00579CF7 /* Kingfisher */; };
@@ -45,6 +55,16 @@
 
 /* Begin PBXFileReference section */
 		3C2BBCEA2AC0557F00CE17BD /* PhotoViewerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewModel.swift; sourceTree = "<group>"; };
+		3C4ABC832AC16C7F00D8D5E4 /* SettingsModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModuleRouter.swift; sourceTree = "<group>"; };
+		3C4ABC852AC16CB500D8D5E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3C4ABC872AC16CC700D8D5E4 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		3C4ABC892AC16CFF00D8D5E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3C4ABC8B2AC1743C00D8D5E4 /* SettingsTableAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableAdapter.swift; sourceTree = "<group>"; };
+		3C4ABC8E2AC17C8D00D8D5E4 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
+		3C4ABC912AC1971500D8D5E4 /* SettingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemModel.swift; sourceTree = "<group>"; };
+		3C4ABC932AC1978900D8D5E4 /* SettingsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProvider.swift; sourceTree = "<group>"; };
+		3C4ABC952AC19A4E00D8D5E4 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		3C4ABC982AC19ACF00D8D5E4 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		3C4D757B2AACA62000A7A064 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		3C4D757D2AACA63100A7A064 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3C5C75142AB354D1002861E4 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -93,9 +113,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C4ABC822AC16C6500D8D5E4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3C4ABC972AC19AC700D8D5E4 /* Views */,
+				3C4ABC832AC16C7F00D8D5E4 /* SettingsModuleRouter.swift */,
+				3C4ABC902AC17DDD00D8D5E4 /* Models */,
+				3C4ABC852AC16CB500D8D5E4 /* SettingsViewController.swift */,
+				3C4ABC872AC16CC700D8D5E4 /* SettingsViewModel.swift */,
+				3C4ABC892AC16CFF00D8D5E4 /* SettingsView.swift */,
+				3C4ABC8B2AC1743C00D8D5E4 /* SettingsTableAdapter.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3C4ABC8D2AC17C7D00D8D5E4 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				3C4ABC8E2AC17C8D00D8D5E4 /* UITableViewCell.swift */,
+				3C4ABC952AC19A4E00D8D5E4 /* BaseTableViewCell.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		3C4ABC902AC17DDD00D8D5E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C4ABC912AC1971500D8D5E4 /* SettingItemModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3C4ABC972AC19AC700D8D5E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3C4ABC982AC19ACF00D8D5E4 /* SettingItemCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3C5874A62AB2F8F300579CF7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				3C4ABC8D2AC17C7D00D8D5E4 /* Table */,
 				3CAD8DB62AB49F850046CEA5 /* Base */,
 				3CD342C62AAA1E3E000F0B3C /* Collection */,
 			);
@@ -183,6 +243,7 @@
 		3CD342B12AAA1491000F0B3C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3C4ABC822AC16C6500D8D5E4 /* Settings */,
 				3CD342B32AAA14A5000F0B3C /* Search */,
 				3CD342B22AAA149C000F0B3C /* PhotoViewer */,
 			);
@@ -256,6 +317,7 @@
 				3CD342D32AACA1CC000F0B3C /* Models */,
 				3CD342D12AAC9E8A000F0B3C /* PhotoProvider.swift */,
 				3C9346DB2AACC5E900BCC0F1 /* Network.swift */,
+				3C4ABC932AC1978900D8D5E4 /* SettingsProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -352,10 +414,15 @@
 				3C6798322AAF34EC00963B0E /* PhotoViewerViewController.swift in Sources */,
 				3C4D757E2AACA63100A7A064 /* SearchView.swift in Sources */,
 				3CD342CA2AAA1F97000F0B3C /* UICollectionReusableView.swift in Sources */,
+				3C4ABC8A2AC16CFF00D8D5E4 /* SettingsView.swift in Sources */,
 				3CD342B92AAA14C9000F0B3C /* PhotoViewerView.swift in Sources */,
 				3C6798342AAF547A00963B0E /* DIContainer.swift in Sources */,
+				3C4ABC862AC16CB500D8D5E4 /* SettingsViewController.swift in Sources */,
+				3C4ABC8F2AC17C8D00D8D5E4 /* UITableViewCell.swift in Sources */,
+				3C4ABC882AC16CC700D8D5E4 /* SettingsViewModel.swift in Sources */,
 				3C2BBCEB2AC0557F00CE17BD /* PhotoViewerViewModel.swift in Sources */,
 				3CD342D22AAC9E8A000F0B3C /* PhotoProvider.swift in Sources */,
+				3C4ABC8C2AC1743C00D8D5E4 /* SettingsTableAdapter.swift in Sources */,
 				3C9346DC2AACC5E900BCC0F1 /* Network.swift in Sources */,
 				3CD342C12AAA1727000F0B3C /* BaseCollectionViewCell.swift in Sources */,
 				3CD342CF2AAA215B000F0B3C /* PhotoViewModel.swift in Sources */,
@@ -377,6 +444,11 @@
 				3CD3429C2AAA10D8000F0B3C /* SceneDelegate.swift in Sources */,
 				3CD342BE2AAA1519000F0B3C /* BaseView.swift in Sources */,
 				3CAD8DB12AB49CC40046CEA5 /* NetworkError+Error.swift in Sources */,
+				3C4ABC942AC1978900D8D5E4 /* SettingsProvider.swift in Sources */,
+				3C4ABC842AC16C7F00D8D5E4 /* SettingsModuleRouter.swift in Sources */,
+				3C4ABC992AC19ACF00D8D5E4 /* SettingItemCell.swift in Sources */,
+				3C4ABC962AC19A4E00D8D5E4 /* BaseTableViewCell.swift in Sources */,
+				3C4ABC922AC1971500D8D5E4 /* SettingItemModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

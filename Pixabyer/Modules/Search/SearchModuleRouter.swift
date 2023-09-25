@@ -19,6 +19,7 @@ class SearchModuleRouter: Router {
 
 protocol SearchRouterProtocol: AnyObject {
 	func routeToPhotoViewerScreen(for imageDetails: [PhotoViewModel])
+	func routeToSettingsScreen()
 }
 
 class SearchRouter: SearchRouterProtocol {
@@ -27,6 +28,11 @@ class SearchRouter: SearchRouterProtocol {
 	func routeToPhotoViewerScreen(for imageDetails: [PhotoViewModel]) {
 		let details = PhotoViewerModuleRouter(items: imageDetails)
 		self.navigator?.navigationController?.pushViewController(details.createModule(), animated: true)
+	}
+	
+	func routeToSettingsScreen() {
+		let settings = SettingsModuleRouter()
+		self.navigator?.navigationController?.present(settings.createModule(), animated: true)
 	}
 }
 

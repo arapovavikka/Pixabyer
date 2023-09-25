@@ -18,5 +18,9 @@ extension Container {
 		DIContainer.shared.register(PhotoProviderProtocol.self, factory: { _ in
 			PhotoProvider()
 		}).inObjectScope(.container)
+		
+		DIContainer.shared.register(SettingsProviderProtocol.self) { _ in
+			SettingsProvider()
+		}.inObjectScope(.container)
 	}
 }

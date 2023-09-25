@@ -2,8 +2,6 @@
 //  PhotoProvider.swift
 //  Pixabyer
 //
-//  Created by Vika on 09.09.2023.
-//
 
 import Foundation
 import Combine
@@ -14,7 +12,7 @@ protocol PhotoProviderProtocol: AnyObject {
 
 final class PhotoProvider: NSObject, PhotoProviderProtocol {
 	private let networkProvider: NetworkProtocol
-	private let apiKey: String = "39343343-a893a4b0a5b2681ccf6be4ceb"
+	private let settingsProvider: SettingsProviderProtocol
 	
 	private lazy var searchURL: ((String) -> URL?) = { [weak self] keyWords in
 		guard let self else { return nil }
@@ -24,14 +22,18 @@ final class PhotoProvider: NSObject, PhotoProviderProtocol {
 		components.host = "pixabay.com"
 		components.path = "/api"
 		components.queryItems = [
-			URLQueryItem(name: "key", value: self.apiKey),
+			URLQueryItem(name: "key", value: self.settingsProvider.apiKey),
 			URLQueryItem(name: "q", value: keyWords)
 		]
 		return components.url
 	}
 	
-	init(networkProvider: NetworkProtocol = DIContainer.shared.resolve(NetworkProtocol.self)!) {
+	init(
+		networkProvider: NetworkProtocol = DIContainer.shared.resolve(NetworkProtocol.self)!,
+		settingsProvider: SettingsProviderProtocol = DIContainer.shared.resolve(SettingsProviderProtocol.self)!
+	) {
 		self.networkProvider = networkProvider
+		self.settingsProvider = settingsProvider
 	}
 	
 	func getSearchResults(with keyWords: String) async throws -> PixabySearchResponse {
