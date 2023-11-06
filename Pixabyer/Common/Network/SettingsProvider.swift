@@ -12,6 +12,6 @@ protocol SettingsProviderProtocol {
 
 final class SettingsProvider: SettingsProviderProtocol {
 	var apiKey: String {
-		"39343343-a893a4b0a5b2681ccf6be4ceb"
+		return Bundle.main.infoDictionary?["API_KEY"] as? String ?? "" 
 	}
 }

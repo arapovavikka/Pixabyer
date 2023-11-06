@@ -4,7 +4,7 @@
 //
 
 struct SettingItemModel {
-	let title: String
+	let type: SettingsMode
 	let value: String
 	let isEditable: Bool
 }

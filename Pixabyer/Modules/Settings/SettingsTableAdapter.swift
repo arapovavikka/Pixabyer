@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 final class SettingsTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
 	private var viewModels: [SettingItemModel] = []
@@ -32,7 +33,7 @@ final class SettingsTableAdapter: NSObject, UITableViewDelegate, UITableViewData
 		tableView.register(SettingItemCell.self, forCellReuseIdentifier: SettingItemCell.identifier)
 	}
 	
-	// MARK: UITableViewDataSource implementation
+	// MARK: - UITableViewDataSource implementation
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
@@ -47,6 +48,11 @@ final class SettingsTableAdapter: NSObject, UITableViewDelegate, UITableViewData
 			indexPath.row < viewModels.count,
 			let cell = tableView.dequeueReusableCell(withIdentifier: SettingItemCell.identifier) as? SettingItemCell else { return UITableViewCell() }
 		cell.update(with: viewModels[indexPath.row])
+		cell.selectionStyle = .none
+		
+		cell.textPublisher.sink { text in
+			print(text)
+		}.store(in: cell)
 		return cell
 	}
 	
@@ -56,6 +62,13 @@ final class SettingsTableAdapter: NSObject, UITableViewDelegate, UITableViewData
 		guard indexPath.row < viewModels.count else { return }
 		if let cell = cell as? SettingItemCell {
 			cell.update(with: viewModels[indexPath.row])
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard indexPath.row < viewModels.count else { return }
+		if let cell = tableView.cellForRow(at: indexPath) as? SettingItemCell {
+			cell.isFirstResponder ? cell.resignFirstResponder() : cell.becomeFirstResponder()
 		}
 	}
 }

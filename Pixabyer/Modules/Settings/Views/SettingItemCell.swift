@@ -4,13 +4,23 @@
 //
 
 import UIKit
+import Combine
 
 fileprivate extension Appearance {
 	var verticalInset: CGFloat { 5 }
 	var widthMultiplier: CGFloat { 0.5 }
 }
 
-class SettingItemCell: BaseTableViewCell {
+class SettingItemCell: BaseCombineTableViewCell {
+	var textPublisher: AnyPublisher<String, Never> {
+		textField
+			.publisher(event: .editingDidEnd)
+			.map { textField -> String in
+				return textField.text ?? ""
+			}
+			.eraseToAnyPublisher()
+	}
+	
 	private let titleLabel = UILabel()
 	private let textField = UITextField()
 	
@@ -40,9 +50,31 @@ class SettingItemCell: BaseTableViewCell {
 	}
 	
 	func update(with model: SettingItemModel) {
-		titleLabel.text = model.title
+		titleLabel.text = model.type.rawValue
 		textField.text = model.value
 	}
 }
 
+// MARK: - UITextFieldDelegate
+
 extension SettingItemCell: UITextFieldDelegate { }
+
+// MARK: - UIResponder
+
+extension SettingItemCell {
+	override var isFirstResponder: Bool {
+		textField.isFirstResponder
+	}
+	
+	override var canBecomeFirstResponder: Bool {
+		true
+	}
+	
+	override func becomeFirstResponder() -> Bool {
+		textField.becomeFirstResponder()
+	}
+	
+	override func resignFirstResponder() -> Bool {
+		textField.resignFirstResponder()
+	}
+}

@@ -28,6 +28,7 @@
 		3C67982F2AAF2B6B00963B0E /* PhotoViewerModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C67982E2AAF2B6B00963B0E /* PhotoViewerModuleRouter.swift */; };
 		3C6798322AAF34EC00963B0E /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6798312AAF34EC00963B0E /* PhotoViewerViewController.swift */; };
 		3C6798342AAF547A00963B0E /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6798332AAF547A00963B0E /* DIContainer.swift */; };
+		3C8F4D292AF8F9F000F86453 /* KeychainDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8F4D282AF8F9F000F86453 /* KeychainDataStore.swift */; };
 		3C9346D82AACC50B00BCC0F1 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3C9346D72AACC50B00BCC0F1 /* Swinject */; };
 		3C9346DC2AACC5E900BCC0F1 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9346DB2AACC5E900BCC0F1 /* Network.swift */; };
 		3C9B6F802AAE2047009E4963 /* SearchModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9B6F7F2AAE2047009E4963 /* SearchModuleRouter.swift */; };
@@ -51,6 +52,8 @@
 		3CD342CF2AAA215B000F0B3C /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD342CE2AAA215B000F0B3C /* PhotoViewModel.swift */; };
 		3CD342D22AAC9E8A000F0B3C /* PhotoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD342D12AAC9E8A000F0B3C /* PhotoProvider.swift */; };
 		3CD342D52AACA1DE000F0B3C /* PixabyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD342D42AACA1DE000F0B3C /* PixabyResponse.swift */; };
+		3CE224252AD541E5007D3C43 /* BaseCombineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE224242AD541E5007D3C43 /* BaseCombineTableViewCell.swift */; };
+		3CE224272AD56D54007D3C43 /* UIControl+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE224262AD56D54007D3C43 /* UIControl+Combine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,8 @@
 		3C67982E2AAF2B6B00963B0E /* PhotoViewerModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerModuleRouter.swift; sourceTree = "<group>"; };
 		3C6798312AAF34EC00963B0E /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		3C6798332AAF547A00963B0E /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		3C8F4D282AF8F9F000F86453 /* KeychainDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDataStore.swift; sourceTree = "<group>"; };
+		3C8F4D2B2AF9020200F86453 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3C9346DB2AACC5E900BCC0F1 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3C9B6F7F2AAE2047009E4963 /* SearchModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModuleRouter.swift; sourceTree = "<group>"; };
 		3C9B6F812AAE23AA009E4963 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -97,6 +102,8 @@
 		3CD342CE2AAA215B000F0B3C /* PhotoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		3CD342D12AAC9E8A000F0B3C /* PhotoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoProvider.swift; sourceTree = "<group>"; };
 		3CD342D42AACA1DE000F0B3C /* PixabyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabyResponse.swift; sourceTree = "<group>"; };
+		3CE224242AD541E5007D3C43 /* BaseCombineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCombineTableViewCell.swift; sourceTree = "<group>"; };
+		3CE224262AD56D54007D3C43 /* UIControl+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Combine.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,7 @@
 			children = (
 				3C4ABC8E2AC17C8D00D8D5E4 /* UITableViewCell.swift */,
 				3C4ABC952AC19A4E00D8D5E4 /* BaseTableViewCell.swift */,
+				3CE224242AD541E5007D3C43 /* BaseCombineTableViewCell.swift */,
 			);
 			path = Table;
 			sourceTree = "<group>";
@@ -179,6 +187,23 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		3C8F4D272AF8F9D000F86453 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				3C8F4D282AF8F9F000F86453 /* KeychainDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		3C8F4D2A2AF901DA00F86453 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CD342A22AAA10D9000F0B3C /* Assets.xcassets */,
+				3C8F4D2B2AF9020200F86453 /* Config.xcconfig */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3C9B6F7C2AADAF8D009E4963 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +222,7 @@
 				3CD342BD2AAA1519000F0B3C /* BaseView.swift */,
 				3C5C751A2AB35B4F002861E4 /* BaseAppNavigationController.swift */,
 				3C5C75172AB35871002861E4 /* BaseViewController.swift */,
+				3CE224262AD56D54007D3C43 /* UIControl+Combine.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -221,9 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				3CD342B12AAA1491000F0B3C /* Modules */,
-				3CD342B02AAA148A000F0B3C /* Common */,
-				3CD342A22AAA10D9000F0B3C /* Assets.xcassets */,
 				3CD342A72AAA10D9000F0B3C /* Info.plist */,
+				3CD342B02AAA148A000F0B3C /* Common */,
 			);
 			path = Pixabyer;
 			sourceTree = "<group>";
@@ -231,6 +256,8 @@
 		3CD342B02AAA148A000F0B3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3C8F4D2A2AF901DA00F86453 /* Resources */,
+				3C8F4D272AF8F9D000F86453 /* DataStore */,
 				3C9B6F7C2AADAF8D009E4963 /* App */,
 				3C5E9FA32AB3624F00BA96B8 /* Error */,
 				3C5874A62AB2F8F300579CF7 /* UIKit */,
@@ -418,6 +445,7 @@
 				3CD342B92AAA14C9000F0B3C /* PhotoViewerView.swift in Sources */,
 				3C6798342AAF547A00963B0E /* DIContainer.swift in Sources */,
 				3C4ABC862AC16CB500D8D5E4 /* SettingsViewController.swift in Sources */,
+				3C8F4D292AF8F9F000F86453 /* KeychainDataStore.swift in Sources */,
 				3C4ABC8F2AC17C8D00D8D5E4 /* UITableViewCell.swift in Sources */,
 				3C4ABC882AC16CC700D8D5E4 /* SettingsViewModel.swift in Sources */,
 				3C2BBCEB2AC0557F00CE17BD /* PhotoViewerViewModel.swift in Sources */,
@@ -434,12 +462,14 @@
 				3CD342C82AAA1E53000F0B3C /* BaseCollectionAdapter.swift in Sources */,
 				3CD342B82AAA14C9000F0B3C /* PhotoViewerCollectionAdapter.swift in Sources */,
 				3CD342CC2AAA1FFF000F0B3C /* Operators.swift in Sources */,
+				3CE224272AD56D54007D3C43 /* UIControl+Combine.swift in Sources */,
 				3C4D757C2AACA62000A7A064 /* SearchViewController.swift in Sources */,
 				3C5E9FA52AB3625C00BA96B8 /* ImagesError+Error.swift in Sources */,
 				3CD342D52AACA1DE000F0B3C /* PixabyResponse.swift in Sources */,
 				3C9B6F822AAE23AA009E4963 /* SearchViewModel.swift in Sources */,
 				3CD342C32AAA1802000F0B3C /* BaseCombineCollectionViewCell.swift in Sources */,
 				3C67982F2AAF2B6B00963B0E /* PhotoViewerModuleRouter.swift in Sources */,
+				3CE224252AD541E5007D3C43 /* BaseCombineTableViewCell.swift in Sources */,
 				3CD342C52AAA1DC7000F0B3C /* PhotoCollectionCell.swift in Sources */,
 				3CD3429C2AAA10D8000F0B3C /* SceneDelegate.swift in Sources */,
 				3CD342BE2AAA1519000F0B3C /* BaseView.swift in Sources */,
@@ -457,6 +487,7 @@
 /* Begin XCBuildConfiguration section */
 		3CD342A82AAA10D9000F0B3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C8F4D2B2AF9020200F86453 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
